@@ -1,0 +1,44 @@
+@import "../../main-styles.scss";
+
+.budget-items-section {
+  display: flex;
+  padding: 50px;
+  background-color: aquamarine;
+
+  //   To center Text
+  justify-content: center;
+  align-items: center;
+  .budget-items-container {
+    display: flex;
+    max-width: 680px;
+    height: 100%;
+    width: 100%;
+    background-color: antiquewhite;
+
+    .income-column,
+    .expenses-column {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 0; // tidak boleh nambah kotaknya jika kalihat telalu panjang
+      flex-grow: 1;
+
+      h1 {
+        font-family: "Lato";
+        font-size: 24px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+    }
+    .income-column {
+      margin-right: 35px;
+      h1 {
+        color: $green;
+      }
+    }
+    .expenses-column {
+      h1 {
+        color: $red;
+      }
+    }
+  }
+}
