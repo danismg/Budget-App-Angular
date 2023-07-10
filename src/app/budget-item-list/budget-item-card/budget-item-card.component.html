@@ -5,6 +5,7 @@
       income: item.amount !== null && item.amount >= 0,
       expense: item.amount !== null && item.amount < 0
     }"
+    (click)="onCardClick()"
   >
     <div class="description">
       <p>{{ item.description }}</p>

@@ -32,9 +32,11 @@
         <button
           type="submit"
           class="button is-primary"
+          [ngClass]="{ 'is-primary': isNewItem, 'is-success': !isNewItem }"
           [disabled]="!itemForm.valid"
         >
-          Add
+          <p *ngIf="isNewItem">Add</p>
+          <p *ngIf="!isNewItem">Save</p>
         </button>
       </div>
     </div>
