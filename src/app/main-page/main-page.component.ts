@@ -13,12 +13,15 @@ export class MainPageComponent implements OnInit {
 
   constructor() {
     let localStorageValue = localStorage.getItem('budgetItems');
+    // string to JSON
     if (localStorageValue) this.budgetItems = JSON.parse(localStorageValue);
+
+    this.totalBudget = this.budgetItems.reduce((rslt, item) => {
+      return rslt + (item.amount || 0);
+    }, 0);
   }
 
-  ngOnInit(): void {
-    localStorage.setItem('budgetItems', JSON.stringify(this.budgetItems));
-  }
+  ngOnInit(): void {}
 
   addItem(newItem: BudgetItem): void {
     this.budgetItems.push(newItem);
